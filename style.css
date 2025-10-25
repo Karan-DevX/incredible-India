@@ -1,0 +1,284 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Navbar */
+.main-cont {
+  width: 100%;
+  font-family: ui-serif, Georgia, Cambria, Times New Roman, Times, serif;
+}
+
+nav {
+  z-index: 10;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  /* position:fixed; */
+}
+
+li {
+  padding: 15px;
+  text-decoration: none;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 5px;
+}
+a {
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+}
+.navbar-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-item {
+  margin: 0px 50px 0 50px;
+}
+
+.sec1 {
+  color: white;
+  width: 100%;
+  /* height:600px; */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-image: url(../Ladakh_Monastery.jpg); */
+  background-image: url(asset/tajamahal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.sec1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.banner {
+  position: relative;
+  z-index: 5;
+}
+.banner h1 {
+  font-size: 6rem;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.buttons-cont a {
+  color: white;
+  border-radius: 50px;
+  padding: 1.3rem;
+  /* font-weight:; */
+  font-size: larger;
+  margin-right: 1rem;
+  /* background-color: #e96720; */
+}
+/* ---------------------------------states----------------------------------- */
+
+.stat-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  margin: 5.5rem;
+}
+
+.stat-item h3 {
+  font-size: 1.9rem;
+  color: #e96720;
+  margin-bottom: 10px;
+}
+
+/* ------------------card--------------------------- */
+.best-place {
+  width: 100%;
+  background-color: #fff4ef;
+  padding: 70px;
+  /* margin-bottom: 60px; */
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.heading h2 {
+  font-size: 50px;
+  margin-bottom: 1rem;
+  /* margin-top: 50px; */
+}
+.heading p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.card-item {
+  width: 30%;
+  border-radius: 20px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.discription {
+  background-color: white;
+}
+
+.photo img {
+  width: 100%;
+  top: 20px;
+}
+
+.cards-cont {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  /* gap:1rem; */
+}
+/* -------------------cta----------- */
+.cta {
+  width: 100%;
+  background-color: #ea4b0f;
+  color: white;
+  padding: 60px;
+}
+
+/* ---------------- */
+
+.Culture {
+  width: 100%;
+  padding: 60px;
+}
+.Culture-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.item {
+  width: 25%;
+  background-color: #fff4ef;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.item h2 {
+  margin-bottom: 20px;
+}
+.logo {
+  width: 100%;
+  font-size: 40px;
+  padding: 25px;
+}
+
+/* ---------------------------------hotel---------------------- */
+.Hotel {
+  width: 100%;
+
+  /* background-color: #FFF4EF; */
+  /* padding: 70px; */
+  /* margin-bottom: 60px; */
+}
+
+.heading p {
+  font-size: 1.5rem;
+}
+
+.Hotel-item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Hotel-regi{
+    width: 100%;
+    background-color:#fff4ef ;
+    padding: 50px;
+}
+.Hotel-booking{
+    width:40% ;
+}
+
+.Hotel-list{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.Hotel-item{
+    /* border-radius: 10px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+
+.hotel-photo img{
+    width:100%;
+}
+.hotel-photo{
+    width: 40%;
+}
+.dis{
+    width: 60%;
+}
+
+/* -------------------gallary--------------------------- */
+.Gallary-card{
+    width: 100%;
+    background-color: #fff4ef ;
+    /* display: flex; */
+}
+.gallary-cont{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem;
+}
+.gallary-item{
+    width: 25%;
+    padding: 10px;
+}
