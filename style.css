@@ -124,7 +124,7 @@ a {
 .best-place {
   width: 100%;
   background-color: #fff4ef;
-  padding: 70px;
+  padding:2.5%;
   /* margin-bottom: 60px; */
 }
 
@@ -148,31 +148,126 @@ a {
   margin-bottom: 30px;
 }
 
-.card-item {
-  width: 30%;
-  border-radius: 20px;
-  background-color: white;
-  border-radius: 20px;
-  margin: 10px;
-}
+/* -------------------------card--------------- */
 
-.discription {
-  background-color: white;
-}
-
-.photo img {
-  width: 100%;
-  top: 20px;
-}
-
-.cards-cont {
+.best-place-list {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
-
-  /* gap:1rem; */
 }
+
+.card {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      margin: 1rem;
+      border-radius: 25px;
+      background-color: white;
+      position: relative;
+      flex-grow: 1;
+      /* transition: ease-in-out 0.3s; */
+    }
+
+    .card img {
+      width: 100%;
+      /* height: 30%; */
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      /* margin-bottom: 1.5rem; */
+    }
+
+    .des {
+      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    }
+
+    .des h2 {
+      margin-bottom: 0.5rem;
+      color: black;
+      font-weight: bold;
+    }
+
+    .des span {
+      color: rgb(108, 100, 100);
+      /* display: block; */
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .des span:nth-child(4) {
+      display: inline;
+    }
+
+    .des p {
+      margin-bottom: 1rem;
+    }
+
+    .des .key-point {
+      display: inline-block;
+      background-color: #fff4ef;
+      color: #922b05;
+      font-weight: bold;
+      padding: 9px;
+      font-size: 0.7rem;
+      /* margin-right: 5px; */
+      margin-bottom: 5px;
+      border-radius: 50px;
+      /* padding: 5px; */
+    }
+
+    .des button {
+      padding: 10px 18px;
+      /* width: 100%; */
+      border-radius: 10px;
+      color: white;
+      background-color: #ea4b0f;
+      border: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: static;
+      float: right;
+    }
+
+    .goa {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background-color: #ea4b0f;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 25px;
+    }
+
+    .img {
+      /* height: 30%; */
+    }
+
+    /* ---------------------- */
+    .card1 {
+      width: 100%;
+      display: flex;
+      background-color: white;
+    }
+
+    .card1 .imge {
+      width: 40%;
+      /* margin: 60px; */
+    }
+
+    .card1 img {
+      width: 100%;
+      height: auto;
+      margin: none;
+    }
+
+    .card1 .des {
+      width: 60%;
+    }
+
+    /* --------------------------------------------- */
+    
 /* -------------------cta----------- */
 .cta {
   width: 100%;
@@ -185,7 +280,7 @@ a {
 
 .Culture {
   width: 100%;
-  padding: 60px;
+  padding:2.5%;
 }
 .Culture-item {
   width: 100%;
@@ -211,60 +306,115 @@ a {
 }
 
 /* ---------------------------------hotel---------------------- */
-.Hotel {
+.Hotel-regi-book{
   width: 100%;
-
-  /* background-color: #FFF4EF; */
-  /* padding: 70px; */
+  background-color: #FFF4EF;
+  padding: 2.5%;
+  display:flex;
   /* margin-bottom: 60px; */
+}
+
+.hotel-list{
+  width: 60%;
+  margin:1rem;
 }
 
 .heading p {
   font-size: 1.5rem;
 }
 
-.Hotel-item {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.Hotel-regi{
-    width: 100%;
-    background-color:#fff4ef ;
-    padding: 50px;
-}
 .Hotel-booking{
-    width:40% ;
+  width: 40%;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.Hotel-list{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+.booking-container{
+  position: sticky;
+  top:10%;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 25px;
+  overflow: hidden;
 }
 
-.Hotel-item{
-    /* border-radius: 10px; */
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-
-
+.booking-container h2{
+  margin-bottom: 1.5rem;
 }
 
+.booking-container label{
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
 
-.hotel-photo img{
-    width:100%;
+.booking-container input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
-.hotel-photo{
-    width: 40%;
+
+.form-group{
+  display: inline-block;
+  gap: 1rem;
+  width: 48%;
 }
-.dis{
-    width: 60%;
+
+.form-group select{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
+
+.booking-form textarea{
+  width: 100%;
+  padding:10px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  height: 80px;
+}
+
+.booking-container button{
+  align-items: center;
+  padding: 12px 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: #ea4b0f;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.card2 {
+      width: 100%;
+      background-color: white;
+      display: flex;
+      position: relative;
+      border-radius: 25px;
+      overflow:hidden;
+      margin-bottom: 2rem;
+    }
+
+    .card2 .photo {
+      width: 30%;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+    }
+
+    .card2 .detail {
+      width: 70%;
+    }
 
 /* -------------------gallary--------------------------- */
 .Gallary-card{
