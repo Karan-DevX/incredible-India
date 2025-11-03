@@ -2,223 +2,671 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>card</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-  <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, 
+  initial-scale=1.0">
+  <!-- <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
-      /* background-color: black; */
-      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body {
-      padding: 5%;
+    body{
       display: flex;
-      flex-wrap: wrap;
-      /* /* justify-content: center; */
+      justify-content: center;
+      align-items:center;
+      background-color: #555;
+      padding: 20px;
+    }
+    .card-container {
+      /* flex-grow:; */
+      gap: 1rem;
+      /* width: 100%; */
+      /* height: 100vh; */
+      display: flex;
+      justify-content: center;
       /* align-items: center; */
-      /* flex-direction: column;  */
-      width: 100%;
-      background-color: black;
-      /* padding: auto; */
+      /* background: #f0f0  f0; */
+      flex-wrap: wrap;
     }
 
     .card {
+      /* flex-grow: 1; */
+      width: 350px;
       display: flex;
       flex-direction: column;
-      width: 30%;
-      margin: 1rem;
-      border-radius: 25px;
-      background-color: white;
-      position: relative;
-      flex-grow: 1;
-      /* transition: ease-in-out 0.3s; */
+      /* align-items: center; */
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     .card img {
       width: 100%;
-      /* height: 30%; */
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      /* margin-bottom: 1.5rem; */
+      height: 200px;
+      object-fit: cover;
+      /* overflow: hidden; */
     }
 
-    .des {
-      padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    .content {
+      flex-grow: 1;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .des h2 {
+    .content h3 {
+      text-transform: capitalize;
+      color: #333;
+      font-size: 1.5rem;
       margin-bottom: 0.5rem;
-      color: black;
-      font-weight: bold;
     }
 
-    .des span {
-      color: rgb(108, 100, 100);
-      /* display: block; */
+    .location {
+      color: #777;
+      font-size: 1rem;
       margin-bottom: 1rem;
+    }
+
+    .discription {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .key-point{
+      flex-grow: 1;
+    }
+
+    .content ul{
+      gap: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .content li {
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 4px;
       font-size: 0.9rem;
+      color: #555;
     }
 
-    .des span:nth-child(4) {
-      display: inline;
-    }
-
-    .des p {
-      margin-bottom: 1rem;
-    }
-
-    .des .key-point {
-      display: inline-block;
-      background-color: #fff4ef;
-      color: #922b05;
-      font-weight: bold;
-      padding: 9px;
-      font-size: 0.7rem;
-      /* margin-right: 5px; */
-      margin-bottom: 5px;
-      border-radius: 50px;
-      /* padding: 5px; */
-    }
-
-    .des button {
-      padding: 10px 18px;
-      /* width: 100%; */
-      border-radius: 10px;
+    .btn {
+      padding: 10px 15px;
+      background-color: #007BFF;
       color: white;
-      background-color: #ea4b0f;
+      border-radius: 5px;
       border: none;
-      font-size: 0.8rem;
-      font-weight: bold;
       cursor: pointer;
-      position: static;
-      float: right;
     }
 
-    .goa {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      background-color: #ea4b0f;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 25px;
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #333;
     }
 
-    .img {
-      /* height: 30%; */
-    }
-
-    /* ---------------------- */
-    .card1 {
-      width: 100%;
+    .footerr{
+      margin-top: auto;
       display: flex;
-      background-color: white;
+      justify-content: space-between;
+      align-items: center;
     }
+  </style> -->
+  <style>
+        /* --- Global Styles --- */
+        :root {
+            --primary-color: #007bff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #dee2e6;
+            --dark-gray: #6c757d;
+            --text-color: #212529;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-    .card1 .imge {
-      width: 40%;
-      /* margin: 60px; */
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .card1 img {
-      width: 100%;
-      height: auto;
-      margin: none;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    .card1 .des {
-      width: 60%;
-    }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    /* --------------------------------------------- */
-    .card2 {
-      width: 100%;
-      background-color: white;
-      display: flex;
-      position: relative;
-      border-radius: 25px;
-    }
+        /* --- Header --- */
+        .page-header {
+            text-align: center;
+            padding: 2.5rem 1rem 2rem;
+            background-color: var(--white);
+            border-bottom: 1px solid var(--medium-gray);
+        }
 
-    .card2 .photo {
-      width: 30%;
-    }
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-    }
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
 
-    .card2 .detail {
-      width: 70%;
-    }
-  </style>
+        /* --- Main Layout Container --- */
+        .booking-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* 2/3 for listings, 1/3 for form */
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        /* --- Hotel Listings Section --- */
+        .hotel-listings h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hotel-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .hotel-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .hotel-details {
+            padding: 1.5rem;
+        }
+
+        .hotel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .rating {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #f5a623;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .location {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amenities span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: #e7f3ff;
+            color: #0056b3;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            border: 1px solid #b6d4f5;
+        }
+
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--dark-gray);
+        }
+
+        .select-btn {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            border: 1px solid var(--medium-gray);
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .select-btn:hover {
+            background-color: var(--light-gray);
+            border-color: #adb5bd;
+        }
+
+        /* --- Booking Form Sidebar --- */
+        .booking-form {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            position: sticky;
+            top: 2rem; /* Sticks to the top while scrolling */
+            height: fit-content;
+        }
+
+        .booking-form h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .booking-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8rem;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .book-btn {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--white);
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.9rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .book-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 992px) {
+            .booking-container {
+                grid-template-columns: 1fr; /* Stack columns */
+            }
+
+            .booking-form {
+                position: static; /* Remove sticky behavior on smaller screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .booking-container {
+                padding: 0 1rem;
+                margin: 1rem auto;
+            }
+
+            .page-header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .hotel-details {
+                padding: 1rem;
+            }
+
+            .price-section {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .select-btn {
+                text-align: center;
+            }
+
+            .booking-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+  <title>card</title>
 </head>
 
 <body>
-  <div class="card">
-    <div class="img">
-      <span class="goa">Goa</span>
-      <img src="gallary/GoaBeaches.jpg" />
-    </div>
-    <div class="des">
-      <h2>Goa Beaches</h2>
-      <span>Pristine beaches with golden sand, Portuguese colonial architecture,
-        and vibrant nightlife along the Arabian Sea</span>
-      <p>
-        <span class="key-point">Beach Paradise</span>
-        <span class="key-point"> Portuguese Heritage</span>
-        <span class="key-point">Vibrant Nightlife</span>
-      </p>  <p style="color: #ea4b0f; font-size: 1.5rem;font-weight: bold;"><span> <i class="fa-solid fa-calendar"></i> November to February</span><button style="position: static; float:right;">Book Hotel</button></p>
-      
-
-    </div>
-  </div>
-  <!-- ----------------------------------------- -->
-  <div class="card">
-    <div class="img">
-      <span class="goa">Goa</span>
-      <img src="asset/Himalayas.jpg" />
-    </div>
-    <div class="des">
-      <h2>Goa Beaches</h2>
-      <span>Pristine beaches with golden sand, Portuguese colonial architecture,
-        and vibrant nightlife along the Arabian Sea</span>
-      <p>
-        <span class="key-point">Beach Paradise</span>
-        <span class="key-point"> Portuguese Heritage</span>
-        <span class="key-point">Vibrant Nightlife</span>
-      </p>
-      <p style="color: #ea4b0f; font-size: 1.5rem;font-weight: bold;">$12000<span>/night</span><button
-          style="position: static; float:right;">Book Hotel</button></p>
-    </div>
-  </div>
-    <div class="card2">
-      <div class="photo"><img src="gallary/Street Food Culture.jpg"></div>
-      <div class="detail">
-        <div class="des">
-          <h2>Goa Beaches</h2>
-          <span><i class="fa-solid fa-location-dot"></i>Udaipur,Rajasthan</span><br>
-          <span>Pristine beaches with golden sand, Portuguese colonial architecture,
-            and vibrant nightlife along the Arabian Sea</span><br><br>
-          <p>
-            <span class="key-point">Beach Paradise</span>
-            <span class="key-point"> Portuguese Heritage</span>
-            <span class="key-point">Vibrant Nightlife</span>
-          </p>
-          <p style="color: #ea4b0f; font-size: 1.5rem;font-weight: bold;">$12000<span>/night</span><button
-              style="position: static; float:right;">Book Hotel</button></p>
-
+  <!-- <div class="card-container">
+   
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrantPristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
         </div>
       </div>
     </div>
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrantPristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrantPristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="gallary/tajamahal.jpg">
+      <div class="content">
+        <h3>taj mahal</h3>
+        <p class="location">Udaipur, Rajasthan</p>
+        <p class="discription">Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          Pristine beaches with golden sand, Portuguese colonial architecture, and vibrant
+          
+          nightlife along the Arabian SeaPristine beaches with golden sand, Portuguese colonial architecture, and
+          vibrant nightlife along the Arabian Sea.</p>
+        <div class="key-point">
+          <ul>
+            <li>Beach Paradise</li>
+            <li>Portuguese Heritage</li>
+            <li>Vibrant Nightlife</li>
+          </ul>
+        </div>
+        <div class="footerr">
+          <p class="price">$1200/night</p>
+          <button class="btn">book hotel</button>
+        </div>
+      </div>
+    </div>
+  
+  </div> -->
+<header class="page-header">
+        <h1>Hotel Booking</h1>
+        <p>Book your perfect stay at India's finest hotels and resorts</p>
+    </header>
+
+    <main>
+        <div class="booking-container">
+            
+            <section class="hotel-listings">
+                <h2>Choose Your Hotel</h2>
+
+                <article class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Exterior view of Taj Lake Palace in Udaipur">
+                    <div class="hotel-details">
+                        <div class="hotel-header">
+                            <h3>Taj Lake Palace</h3>
+                            <span class="rating">⭐ 4.8</span>
+                        </div>
+                        <p class="location">Udaipur, Rajasthan</p>
+                        <p class="description">A floating palace on Lake Pichola offering royal luxury and breathtaking views.</p>
+                        <div class="amenities">
+                            <span>Pool</span>
+                            <span>Spa</span>
+                            <span>Restaurant</span>
+                            <span>Lake View</span>
+                            <span>Heritage</span>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">₹25,000 <span>/ night</span></div>
+                            <button class="select-btn">Select</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1563911302283-d2bc129e7570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1635&q=80" alt="View of the Taj Mahal from a balcony at Oberoi Amarvilas">
+                    <div class="hotel-details">
+                        <div class="hotel-header">
+                            <h3>Oberoi Amarvilas</h3>
+                            <span class="rating">⭐ 4.9</span>
+                        </div>
+                        <p class="location">Agra, Uttar Pradesh</p>
+                        <p class="description">Unparalleled views of the Taj Mahal from every room in this luxury resort.</p>
+                        <div class="amenities">
+                            <span>Taj View</span>
+                            <span>Spa</span>
+                            <span>Fine Dining</span>
+                            <span>Butler Service</span>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">₹45,000 <span>/ night</span></div>
+                            <button class="select-btn">Select</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1615880484746-a134be4d68d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Villas by the backwaters at Kumarakom Lake Resort">
+                    <div class="hotel-details">
+                        <div class="hotel-header">
+                            <h3>Kumarakom Lake Resort</h3>
+                            <span class="rating">⭐ 4.6</span>
+                        </div>
+                        <p class="location">Kerala</p>
+                        <p class="description">Traditional Kerala architecture set amidst the tranquil backwaters.</p>
+                        <div class="amenities">
+                            <span>Backwater View</span>
+                            <span>Ayurveda</span>
+                            <span>Houseboat</span>
+                            <span>Pool</span>
+                            <span>Yoga</span>
+                        </div>
+                        <div class="price-section">
+                            <div class="price">₹15,000 <span>/ night</span></div>
+                            <button class="select-btn">Select</button>
+                        </div>
+                    </div>
+                </article>
+
+                </section>
+
+            <aside class="booking-form">
+                <h2>Booking Details</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="text" id="checkin" name="checkin" placeholder="mm/dd/yyyy" onfocus="(this.type='date')">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="text" id="checkout" name="checkout" placeholder="mm/dd/yyyy" onfocus="(this.type='date')">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <input type="number" id="guests" name="guests" value="2" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full-name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" name="special-requests" placeholder="Any special requests..."></textarea>
+                    </div>
+                    <button type="submit" class="book-btn">Book Now</button>
+                </form>
+            </aside>
+
+        </div>
+    </main>
 </body>
 
 </html>
