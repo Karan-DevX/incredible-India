@@ -511,8 +511,8 @@ font-size: 0.8rem;
 }
 .sign {
   border-radius: 5px;
-  width: 400px;
-  padding: 2.5%;
+  /* width: 400px; */
+  padding:10px 25px 25px 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
@@ -659,5 +659,10 @@ p {
   .gallary-item {
     width: 80%;
   }
+ 
   
+  .sign{
+    width: 90%;
+    margin-top: 2.5rem;
+  }
 }
