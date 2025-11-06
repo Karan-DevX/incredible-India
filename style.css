@@ -4,12 +4,17 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
 body{
   font-family: Arial, Helvetica, sans-serif;
+  
 }
 /* Navbar */
 .main-cont {
   width: 100%;
+  
   /* font-family: ui-serif, Georgia, Cambria, Times New Roman, Times, serif; */
 }
 
@@ -35,6 +40,7 @@ body{
   text-decoration: none;
 }
 
+
 button {
   font-size:1rem;;
   padding: 12px 25px;
@@ -44,12 +50,33 @@ button {
   border-style: none;
   font-weight: bold;
 }
-a {
+.right-nav a {
   text-decoration: none;
   color: black;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
   /* font-weight: bold; */
 }
 
+.navbar .right-nav a:hover {
+  background-color: #e96720;
+  /* font-weight: bold; */
+  color: white;
+  border-radius: 5px;
+
+}
+
+.left-nav h1 {
+  text-decoration: none;
+  color: #e96720;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+a{
+  text-decoration: none;
+}
 .right-nav {
   display: flex;
   align-items: center;
@@ -177,6 +204,13 @@ a {
   /* transition: ease-in-out 0.3s; */
 }
 
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+  /* border: 5px solid #e96720; */
+}
+
 .card img {
   width: 100%;
   height: 300px;
@@ -270,7 +304,7 @@ font-size: 0.8rem;
   text-align: center;
 }
 .item {
-  width: 25%;
+  width:30%;
   background-color: #fff4ef;
   margin: 10px;
   padding: 20px;
@@ -300,6 +334,7 @@ font-size: 0.8rem;
   width: 60%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .hotel-list h1{
@@ -307,12 +342,18 @@ font-size: 0.8rem;
 }
 /* --------hotel-card------------------------------------- */
 .hotel-list .card1{
-  width: 100%;
+  width: 90%;
   background-color: white;
   margin-bottom:1rem;
   border-radius: 10px;
   overflow: hidden;
   /* display: flex; */
+}
+
+.hotel-list .card1:hover{
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transform: scale(1.02);
+  transition: ease-in-out 0.3s;
 }
 
 .card1 img{
@@ -343,6 +384,7 @@ font-size: 0.8rem;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .booking-container h2 {
@@ -446,6 +488,11 @@ font-size: 0.8rem;
   margin-bottom: 1rem;
 }
 
+.gallary-item:hover{
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
 .gallary-item  img{
   width:100%;
   /* height: 250px; */
@@ -463,8 +510,10 @@ font-size: 0.8rem;
   /* text-align: center; */
 }
 .sign {
+  border-radius: 5px;
   width: 400px;
   padding: 2.5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .sign .line input {
@@ -510,4 +559,105 @@ p {
   font-weight: bold;
   cursor: pointer;
   margin-top: 1rem;
+}
+
+
+/* responnsi */
+@media screen and (max-width:1010px) {
+ .card {
+    width: 45%;
+  }
+
+}
+
+@media screen and (max-width:673px) {
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .banner h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.navbar li {
+    padding: 10px;
+  }
+
+  .banner p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+.buttons-cont a{
+  padding: 1rem;
+  font-size: medium;
+}
+  .stat-item {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    margin: 2rem;
+    gap: 1rem;
+  }
+
+  .stat-item1{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .best-place-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .Culture-item {
+    flex-direction: column;
+    display: flex;
+    align-items:center;
+  }
+
+  
+  .item {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+ .cta{
+  padding: 17px;
+ }
+
+ .cta h2{
+  font-size:2rem;
+  margin-bottom:1rem;
+ }
+
+ .heading{
+  margin-bottom: 20px;
+ }
+
+ 
+
+  .heading h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  .Hotel-regi-book {
+    flex-direction: column;
+  }
+
+  .hotel-list,
+  .Hotel-booking {
+    width: 100%;
+  }
+
+  .gallary-item {
+    width: 80%;
+  }
+  
 }
