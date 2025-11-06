@@ -665,4 +665,9 @@ p {
     width: 90%;
     margin-top: 2.5rem;
   }
+
+  .cont{
+    height:100%;
+    /* padding: 2rem 0; */
+  }
 }
